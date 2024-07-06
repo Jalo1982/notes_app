@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
   final int maxLines;
 
   final void Function(String?)? onSaved;
+
   final Function(String?)? onChanged;
   @override
   Widget build(context) {
@@ -30,7 +31,6 @@ class CustomTextField extends StatelessWidget {
       maxLines: maxLines,
       decoration: InputDecoration(
         hintText: hint,
-        //hintStyle: const TextStyle(color: kPrimaryColor),
         border: biuldBorder(),
         enabledBorder: biuldBorder(),
         focusedBorder: biuldBorder(kPrimaryColor),
@@ -40,8 +40,10 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder biuldBorder([color]) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide(color: color ?? Colors.white),
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(
+        color: color ?? Colors.white,
+      ),
     );
   }
 }
