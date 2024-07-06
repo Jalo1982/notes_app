@@ -14,14 +14,3 @@ class AddNoteFailure extends AddNoteState {
 
   AddNoteFailure(this.errMessage);
 }
-
-
-
-
-
-
-// final class NotesInitial extends NotesState {}
-// final class NotesLoading extends NotesState {}
-// final class NotesSuccess extends NotesState {}
-// final class NotesFailure extends NotesState {}
-// final class NoteserrMessage extends NotesState {}

@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/widgets/color_list_view.dart';
 import 'package:notes_app/views/widgets/custom_button.dart';
 import 'package:notes_app/views/widgets/cutom_text_field.dart';
 import 'package:intl/intl.dart';
-import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
-
-import 'colors_list_view.dart';
-import 'custom_button.dart';
-import 'custom_text_field.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -53,7 +49,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 16,
           ),
-          //ClorListView(),
+          ColorListView(),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
@@ -64,7 +60,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                     var currentDate = DateTime.now();
 
                     var formattedCurrentDate =
-                        DateFormat('dd-mm-yyyy').format(currentdate);
+                        DateFormat('dd-mm-yyyy').format(currentDate);
 
                     var noteModel = NoteModel(
                         title: title!,
