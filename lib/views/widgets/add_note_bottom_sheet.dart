@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/add_note_form.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+
 
 class AddModalBottomSheet extends StatelessWidget {
   const AddModalBottomSheet({super.key});
@@ -15,7 +15,6 @@ class AddModalBottomSheet extends StatelessWidget {
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (context, state) {
           if (state is AddNoteFailure) {
-            //print('Failied $State.errMessage');
           }
           if (state is AddNoteSuccess) {
             BlocProvider.of<NotesCubit>(context).fetchAllNotes();
@@ -40,4 +39,4 @@ class AddModalBottomSheet extends StatelessWidget {
     );
   }
 }
-//ModalProgressHUD with AbsorbPointer
+

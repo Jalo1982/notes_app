@@ -47,9 +47,12 @@ class _AddNoteFormState extends State<AddNoteForm> {
             maxLines: 5,
           ),
           const SizedBox(
-            height: 16,
+            height: 32,
           ),
-          ColorListView(),
+          const ColorListView(),
+          const SizedBox(
+            height: 32,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
@@ -61,13 +64,11 @@ class _AddNoteFormState extends State<AddNoteForm> {
 
                     var formattedCurrentDate =
                         DateFormat('dd-mm-yyyy').format(currentDate);
-
                     var noteModel = NoteModel(
                         title: title!,
                         subTitle: subTitle!,
                         date: formattedCurrentDate, //DateTime.now().toString(),
                         color: Colors.blue.value);
-
                     BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
