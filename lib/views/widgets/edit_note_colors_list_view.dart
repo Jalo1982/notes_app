@@ -24,22 +24,24 @@ class _EditNoteColorsListState extends State<EditNoteColorsList> {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 38 * 2,
-      child: ListView.builder(itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 6),
-          child: GestureDetector(
-            onTap: () {
-              currentIndex = index;
-              widget.note.color = kColors[index].value;
-              setState(() {});
-            },
-            child: ColorItem(
-              isActive: currentIndex == index,
-              color: kColors[index],
+      child: ListView.builder(
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 6),
+            child: GestureDetector(
+              onTap: () {
+                currentIndex = index;
+                widget.note.color = kColors[index].value;
+                setState(() {});
+              },
+              child: ColorItem(
+                isActive: currentIndex == index,
+                color: kColors[index],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }

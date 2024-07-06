@@ -11,10 +11,9 @@ class CustomTextField extends StatelessWidget {
 
   final String hint;
   final int maxLines;
-
   final void Function(String?)? onSaved;
-
   final Function(String?)? onChanged;
+
   @override
   Widget build(context) {
     return TextFormField(
@@ -37,7 +36,6 @@ class CustomTextField extends StatelessWidget {
       ),
     );
   }
-
   OutlineInputBorder biuldBorder([color]) {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),

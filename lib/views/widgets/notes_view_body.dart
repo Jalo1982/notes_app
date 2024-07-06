@@ -10,14 +10,12 @@ class NotesViewBody extends StatefulWidget {
   @override
   State<NotesViewBody> createState() => _NotesViewBodyState();
 }
-
 class _NotesViewBodyState extends State<NotesViewBody> {
   @override
   void initState() {
     BlocProvider.of<NotesCubit>(context).fetchAllNotes();
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return const Padding(
