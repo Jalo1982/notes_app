@@ -13,7 +13,7 @@ class NotesListView extends StatelessWidget {
       builder: (context, state) {
         List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
         if (notes.isEmpty) {
-          return Center(child: Text('No notes available'));
+          return const Center(child: Text('No notes available'));
         }
 
         return Padding(
