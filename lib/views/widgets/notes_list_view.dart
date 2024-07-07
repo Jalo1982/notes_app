@@ -11,8 +11,8 @@ class NotesListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        List<NoteModel> notes =
-            BlocProvider.of<NotesCubit>(context).notes!; // ?? [];  It use to view empty list when we start the app first time without notes
+        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context)
+            .notes!; // ?? [];  It use to view empty list when we start the app first time without notes
         if (notes.isEmpty) {
           return const Center(child: Text('No notes available'));
         }
