@@ -8,5 +8,6 @@ List<Color> kColors = const [
   Color(0xffD9E76C),
   Color(0xff537D8D),
   Color(0xff482C3D),
-  Color(0xffE5D352),
+  Color.fromARGB(255, 51, 65, 222),
+  Color.fromARGB(255, 18, 157, 16),
 ];

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/constant.dart';
 import 'package:notes_app/models/note_model.dart';
-import 'package:notes_app/views/widgets/color_list_view.dart';
+import 'package:notes_app/views/widgets/color_item.dart';
 
 class EditNoteColorsList extends StatefulWidget {
   const EditNoteColorsList({super.key, required this.note});
@@ -25,6 +25,8 @@ class _EditNoteColorsListState extends State<EditNoteColorsList> {
     return SizedBox(
       height: 38 * 2,
       child: ListView.builder(
+        itemCount: kColors.length,
+        scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 6),
@@ -35,8 +37,8 @@ class _EditNoteColorsListState extends State<EditNoteColorsList> {
                 setState(() {});
               },
               child: ColorItem(
-                isActive: currentIndex == index,
                 color: kColors[index],
+                isActive: currentIndex == index,
               ),
             ),
           );
