@@ -11,16 +11,16 @@ class NotesListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotesCubit, NotesState>(
       builder: (context, state) {
-        List<NoteModel> notes = BlocProvider.of<NotesCubit>(context).notes!;
+        List<NoteModel> notes =
+            BlocProvider.of<NotesCubit>(context).notes!; // ?? [];  It use to view empty list when we start the app first time without notes
         if (notes.isEmpty) {
           return const Center(child: Text('No notes available'));
         }
-
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 16),
           child: ListView.builder(
             padding: EdgeInsets.zero,
-            itemCount: notes.length, // I add this after debuging
+            itemCount: notes.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
